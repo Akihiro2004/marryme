@@ -251,19 +251,6 @@
             }
         }
 
-        .attempts-counter {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: rgba(255, 255, 255, 0.9);
-            padding: 8px 12px;
-            border-radius: 20px;
-            font-size: 0.8em;
-            color: #666;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 182, 193, 0.3);
-        }
-
         /* Mobile optimizations */
         @media (max-width: 480px) {
             body {
@@ -291,11 +278,6 @@
             
             .buttons-container {
                 height: 160px;
-            }
-            
-            .attempts-counter {
-                font-size: 0.7em;
-                padding: 6px 10px;
             }
             
             .celebration-content {
@@ -339,9 +321,6 @@
     
     <div class="proposal-container">
         <div class="hearts">💕💖💕</div>
-        <div class="attempts-counter">
-            Attempts to say no: <span id="attempts">0</span>
-        </div>
         
         <div class="personal-message">
             <p class="from-to">From Darrien 💕 To Hannah</p>
@@ -369,7 +348,6 @@
     <script>
         let attempts = 0;
         const noBtn = document.getElementById('noBtn');
-        const attemptsCounter = document.getElementById('attempts');
         const container = document.querySelector('.buttons-container');
 
         // Create animated background elements
@@ -411,7 +389,6 @@
 
         function moveButton() {
             attempts++;
-            attemptsCounter.textContent = attempts;
             
             // Get container dimensions
             const containerRect = container.getBoundingClientRect();
